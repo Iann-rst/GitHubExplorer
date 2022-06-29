@@ -36,14 +36,15 @@ export function Dashboard() {
 
   const { addRepository, repositories } = useRepositories();
 
+  //Função para buscar um repositório do github
   function handleAddRepository() {
-    /**
-     * TODO: 
-     * - call addRepository function sending inputText value;
-     * - clean inputText value.
-     */
-
-    Alert.alert("Valor do input Text", inputText);
+    try {
+      addRepository(inputText);
+    } catch (e: any) {
+      Alert.alert(e);
+    } finally {
+      setInputText('');
+    }
   }
 
   function handleRepositoryPageNavigation(id: number) {
