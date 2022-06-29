@@ -56,6 +56,7 @@ export function Dashboard() {
      *  repositoryId: id of the repository
      * })
      */
+    navigate('Repository', { repositoryId: id });
   }
 
   return (
