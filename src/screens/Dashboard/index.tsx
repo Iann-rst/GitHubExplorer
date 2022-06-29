@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { useRef, useState } from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, Alert } from 'react-native';
 
 import { Background } from '../../components/Background';
 import { Card } from '../../components/Card';
@@ -42,6 +42,8 @@ export function Dashboard() {
      * - call addRepository function sending inputText value;
      * - clean inputText value.
      */
+
+    Alert.alert("Valor do input Text", inputText);
   }
 
   function handleRepositoryPageNavigation(id: number) {
@@ -66,11 +68,7 @@ export function Dashboard() {
               ref={inputRef}
               placeholder="Digite aqui 'usuário/repositório'"
               value={inputText}
-              /**
-               * TODO - update inputText value when input text value 
-               * changes:
-               * onChangeText={YOUR CODE HERE}
-               */
+              onChangeText={setInputText}
               onSubmitEditing={handleAddRepository}
               returnKeyType="send"
               autoCapitalize='none'
@@ -85,6 +83,7 @@ export function Dashboard() {
                * empty (use disabled prop to this):
                * disabled={CONDITION HERE}
                */
+              disabled={!inputText}
             >
               <Icon name="search" size={20} />
             </InputButton>
