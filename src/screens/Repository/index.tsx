@@ -38,22 +38,25 @@ export function Repository() {
 
   function handleIssueNavigation(issueUrl: string) {
     // TODO - use Linking to open issueUrl in a browser
+    Linking.openURL(issueUrl);
   }
 
   return (
     <Background>
       <Container>
         <RepoInfo>
-          {/* <OwnerAvatar source={{ uri:  }} /> */}
+          {<OwnerAvatar source={{ uri: repository.owner.avatar_url }} />}
 
           <TextGroup>
             <TitleAnimation>
               {
+                repository.full_name
                 // TODO - full name of the repository
               }
             </TitleAnimation>
 
             <Description numberOfLines={2}>{
+              repository.description
               //TODO - repository description
             }</Description>
           </TextGroup>
@@ -62,6 +65,7 @@ export function Repository() {
         <RepoStats>
           <Stars>
             <StarsCounter>{
+              repository.stargazers_count
               // TODO - repository stargazers count
             }</StarsCounter>
             <StarsText>Stars</StarsText>
@@ -69,6 +73,7 @@ export function Repository() {
 
           <Forks>
             <ForksCounter>{
+              repository.forks_count
               // TODO - repository forks count
             }</ForksCounter>
             <ForksText>Forks</ForksText>
@@ -76,6 +81,7 @@ export function Repository() {
 
           <OpenIssues>
             <OpenIssuesCounter>{
+              repository.open_issues_count
               // TODO - repository issues count
             }</OpenIssuesCounter>
             <OpenIssuesText>Issues{'\n'}Abertas</OpenIssuesText>
@@ -93,7 +99,8 @@ export function Repository() {
                 title: issue.title,
                 subTitle: issue.user.login,
               }}
-              // TODO - onPress prop calling 
+              onPress={() => handleIssueNavigation(issue.html_url)}
+            // TODO - onPress prop calling 
             />
           )}
         />
