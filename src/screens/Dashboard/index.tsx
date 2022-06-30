@@ -38,24 +38,11 @@ export function Dashboard() {
 
   //Função para buscar um repositório do github
   function handleAddRepository() {
-    try {
-      addRepository(inputText);
-    } catch (e: any) {
-      Alert.alert(e);
-    } finally {
-      setInputText('');
-    }
+    addRepository(inputText);
+    setInputText('');
   }
 
   function handleRepositoryPageNavigation(id: number) {
-    /**
-     * TODO - navigate to the Repository screen sending repository id.
-     * Remember to use the correct prop name (repositoryId) to the repositoy id:
-     * 
-     * navigate(SCREEN NAME, {
-     *  repositoryId: id of the repository
-     * })
-     */
     navigate('Repository', { repositoryId: id });
   }
 
