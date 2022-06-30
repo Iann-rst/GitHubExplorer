@@ -23,7 +23,8 @@ export function CardAnimation({ children, ...rest }: CardAnimationProps) {
   const animatedStyle = useAnimatedStyle(() => {
     return {
       // TODO - setup animated style
-      opacity: interpolate(cardOpacity.value, [0, 1], [0, 1], Extrapolate.CLAMP),
+      //opacity: interpolate(cardOpacity.value, [0, 1], [0, 1], Extrapolate.CLAMP),
+      opacity: cardOpacity.value,
       transform: [
         {
           translateX: cardOffset.value
