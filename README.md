@@ -13,7 +13,7 @@ Nesse aplicativo são explorados:
 
 ## :camera: Screenshot
 
-<p align="center>
+<p align="center">
   <img alt="Aplicação GitHub Explorer" src=".github/GitHubExplorer.gif" height="500"/>
 </p>
 
