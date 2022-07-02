@@ -13,7 +13,5 @@ Nesse aplicativo são explorados:
 
 ## :camera: Screenshot
 
-<p align="center">
-  <img alt="Aplicação GitHub Explorer" src=".github/GitHubExplorer_aplicação.gif"/>
-</p>
+https://user-images.githubusercontent.com/48128325/177013801-4b506368-0edc-4c93-a623-f03e1a67d365.mp4
 
